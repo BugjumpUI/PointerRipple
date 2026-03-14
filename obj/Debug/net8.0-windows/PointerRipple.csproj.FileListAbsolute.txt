@@ -1,0 +1,14 @@
+C:\Users\Administrator\PointerRipple\bin\Debug\net8.0-windows\PointerRipple.exe
+C:\Users\Administrator\PointerRipple\bin\Debug\net8.0-windows\PointerRipple.deps.json
+C:\Users\Administrator\PointerRipple\bin\Debug\net8.0-windows\PointerRipple.runtimeconfig.json
+C:\Users\Administrator\PointerRipple\bin\Debug\net8.0-windows\PointerRipple.dll
+C:\Users\Administrator\PointerRipple\bin\Debug\net8.0-windows\PointerRipple.pdb
+C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.AssemblyInfoInputs.cache
+C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.AssemblyInfo.cs
+C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.dll
+C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\refint\PointerRipple.dll
+C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.pdb
+C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.genruntimeconfig.cache
+C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\ref\PointerRipple.dll
