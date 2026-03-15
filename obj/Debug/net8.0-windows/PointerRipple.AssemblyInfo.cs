@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PointerRipple")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5a003731c7227199f132e5f7e674eb388a0e04b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.1+cfabbb03351229fd4245386dec9bfbc5a79eded8")]
 [assembly: System.Reflection.AssemblyProductAttribute("PointerRipple")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PointerRipple")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
