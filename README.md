@@ -26,7 +26,7 @@ The application creates a transparent overlay window that covers all monitors. I
 
 ### Requirements
 - Windows OS (7/8/10/11)
-- [.NET 6.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- [.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 ### Installation
 1. Download the compressed package (zip file).
@@ -39,7 +39,7 @@ The application creates a transparent overlay window that covers all monitors. I
 - **Automatic Start**: Add a shortcut to the startup folder for auto-run.
 
 ### Building from Source
-Open the solution in Visual Studio 2022 and build. The project targets .NET 6.0 and uses Windows Forms.
+Open the solution in Visual Studio 2022 and build. The project targets .NET 8.0 and uses Windows Forms.
 
 ---
 
@@ -63,7 +63,7 @@ PointerRipple 是一个轻量级的 Windows 工具，能在鼠标点击时创建
 
 ### 系统要求
 - Windows 操作系统 (7/8/10/11)
-- [.NET 6.0 桌面运行时](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- [.NET 8.0 桌面运行时](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 
 ### 安装方法
 1. 下载压缩包 (zip 文件)。
@@ -76,7 +76,7 @@ PointerRipple 是一个轻量级的 Windows 工具，能在鼠标点击时创建
 - **开机自启**：将快捷方式添加到启动文件夹可实现开机自动运行
 
 ### 源码编译
-在 Visual Studio 2022 中打开解决方案并编译。项目基于 .NET 6.0，使用 Windows Forms 开发。
+在 Visual Studio 2022 中打开解决方案并编译。项目基于 .NET 8.0，使用 Windows Forms 开发。
 
 ---
 
