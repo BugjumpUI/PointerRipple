@@ -7,6 +7,7 @@ C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.Gene
 C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.AssemblyInfoInputs.cache
 C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.AssemblyInfo.cs
 C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.sourcelink.json
 C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.dll
 C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\refint\PointerRipple.dll
 C:\Users\Administrator\PointerRipple\obj\Debug\net8.0-windows\PointerRipple.pdb

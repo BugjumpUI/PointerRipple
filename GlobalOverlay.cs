@@ -118,66 +118,7 @@ namespace PointerRipple {
 		private NotifyIcon trayIcon;
 		private ContextMenuStrip trayMenu;
 
-		private class Ripple {
-			public Point Position { get; set; }
-			public bool IsPress { get; set; }
-			public bool IsReleased { get; set; }
-
-			private DateTime pressStartTime;
-			private DateTime? releaseStartTime;
-			private float releaseAlpha;
-
-			private const float DURATION = 200f;
-
-			public Ripple(Point pos, bool isPress) {
-				Position = pos;
-				IsPress = isPress;
-				IsReleased = false;
-				pressStartTime = DateTime.Now;
-			}
-
-			public void Release() {
-				if (!IsReleased) {
-					IsReleased = true;
-					releaseStartTime = DateTime.Now;
-					float elapsedPress = (float)(DateTime.Now - pressStartTime).TotalMilliseconds;
-					float pressProgress = Math.Min(elapsedPress / DURATION, 1f);
-					releaseAlpha = GetPressAlpha(pressProgress);
-				}
-			}
-
-			private float GetPressAlpha(float progress) {
-				float rev = 1f - progress;
-				float curved = 1f - (rev * rev);
-				return curved * 127f;
-			}
-
-			public float GetRadius() {
-				float elapsedPress = (float)(DateTime.Now - pressStartTime).TotalMilliseconds;
-				float pressProgress = Math.Min(elapsedPress / DURATION, 1f);
-				float rev = 1f - pressProgress;
-				float curved = 1f - (rev * rev);
-				return 24f + (curved * 24f);
-			}
-
-			public int GetAlpha() {
-				float elapsedPress = (float)(DateTime.Now - pressStartTime).TotalMilliseconds;
-				float pressProgress = Math.Min(elapsedPress / DURATION, 1f);
-				if (!IsReleased) return (int)GetPressAlpha(pressProgress);
-				if (!releaseStartTime.HasValue) return 0;
-				float elapsedRelease = (float)(DateTime.Now - releaseStartTime.Value).TotalMilliseconds;
-				float releaseProgress = Math.Min(elapsedRelease / DURATION, 1f);
-				float revOut = 1f - releaseProgress;
-				float curvedOut = 1f - (revOut * revOut);
-				return (int)(releaseAlpha * (1f - curvedOut));
-			}
-
-			public bool IsFinished() {
-				if (!IsReleased || !releaseStartTime.HasValue) return false;
-				float elapsedRelease = (float)(DateTime.Now - releaseStartTime.Value).TotalMilliseconds;
-				return elapsedRelease >= DURATION;
-			}
-		}
+		private Config config = new Config();
 
 		public GlobalOverlay() {
 			int virtualWidth = GetSystemMetrics(SM_CXVIRTUALSCREEN);
@@ -220,6 +161,7 @@ namespace PointerRipple {
 			trayIcon.Text = "PointerRipple";
 			trayIcon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
 			trayMenu = new ContextMenuStrip();
+
 			ToolStripMenuItem showHideItem = new ToolStripMenuItem("显示/隐藏");
 			showHideItem.Click += (s, e) => {
 				this.Visible = !this.Visible;
@@ -228,13 +170,26 @@ namespace PointerRipple {
 				}
 			};
 			trayMenu.Items.Add(showHideItem);
+
+			ToolStripMenuItem configItem = new ToolStripMenuItem("配置");
+			configItem.Click += (s, e) => {
+				using (ConfigForm cf = new ConfigForm(config)) {
+					if (cf.ShowDialog() == DialogResult.OK) {
+						config = cf.Config;
+					}
+				}
+			};
+			trayMenu.Items.Add(configItem);
+
 			trayMenu.Items.Add(new ToolStripSeparator());
+
 			ToolStripMenuItem exitItem = new ToolStripMenuItem("退出应用");
 			exitItem.Click += (s, e) => {
 				trayIcon.Visible = false;
 				Application.Exit();
 			};
 			trayMenu.Items.Add(exitItem);
+
 			trayIcon.ContextMenuStrip = trayMenu;
 			trayIcon.Visible = true;
 		}
@@ -243,21 +198,19 @@ namespace PointerRipple {
 			backGraphics.Clear(Color.FromArgb(0, 0, 0, 0));
 			foreach (var r in releaseRipples) {
 				float radius = r.GetRadius();
-				int alpha = r.GetAlpha();
 				int x = (int)(r.Position.X - radius);
 				int y = (int)(r.Position.Y - radius);
 				int size = (int)(radius * 2);
-				using (SolidBrush brush = new SolidBrush(Color.FromArgb(alpha, 128, 128, 128))) {
+				using (SolidBrush brush = new SolidBrush(r.GetColor())) {
 					backGraphics.FillEllipse(brush, x, y, size, size);
 				}
 			}
 			if (pressRipple != null) {
 				float radius = pressRipple.GetRadius();
-				int alpha = pressRipple.GetAlpha();
 				int x = (int)(pressRipple.Position.X - radius);
 				int y = (int)(pressRipple.Position.Y - radius);
 				int size = (int)(radius * 2);
-				using (SolidBrush brush = new SolidBrush(Color.FromArgb(alpha, 128, 128, 128))) {
+				using (SolidBrush brush = new SolidBrush(pressRipple.GetColor())) {
 					backGraphics.FillEllipse(brush, x, y, size, size);
 				}
 			}
@@ -298,7 +251,7 @@ namespace PointerRipple {
 									pressRipple.Release();
 									releaseRipples.Add(pressRipple);
 								}
-								pressRipple = new Ripple(pos, true);
+								pressRipple = new Ripple(pos, true, config);
 							}));
 						}
 						break;

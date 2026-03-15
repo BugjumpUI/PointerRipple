@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Administrator\\PointerRipple\\PointerRipple.csproj": {}
+    "C:\\Users\\Administrator\\PointerRipple\\PointerRipple.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Administrator\\PointerRipple\\PointerRipple.csproj": {
+    "C:\\Users\\Administrator\\PointerRipple\\PointerRipple.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Administrator\\PointerRipple\\PointerRipple.csproj",
+        "projectUniqueName": "C:\\Users\\Administrator\\PointerRipple\\PointerRipple.csproj",
         "projectName": "PointerRipple",
-        "projectPath": "c:\\Users\\Administrator\\PointerRipple\\PointerRipple.csproj",
+        "projectPath": "C:\\Users\\Administrator\\PointerRipple\\PointerRipple.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Administrator\\PointerRipple\\obj\\",
+        "outputPath": "C:\\Users\\Administrator\\PointerRipple\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
