@@ -26,7 +26,7 @@ The application creates a transparent overlay window that covers all monitors. I
 
 ### Requirements
 - Windows OS (7/8/10/11)
-- [.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- [.NET 8.0 Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 
 ### Installation
 1. Download the compressed package (zip file).
@@ -63,7 +63,7 @@ PointerRipple 是一个轻量级的 Windows 工具，能在鼠标点击时创建
 
 ### 系统要求
 - Windows 操作系统 (7/8/10/11)
-- [.NET 8.0 桌面运行时](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+- [.NET 8.0 桌面运行时](https://dotnet.microsoft.com/zh-cn/download/dotnet/8.0)
 
 ### 安装方法
 1. 下载压缩包 (zip 文件)。
